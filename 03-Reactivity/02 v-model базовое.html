@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueUpAndRun</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-model="inputText" value="initial value"> <!-- value тут будет проигнорировано. использовать в data см внизу -->
+    <p>inputText: {{ inputText }}</p>
+</div>
+
+<script>
+    // It’s important to note that when you use v-model, if you set the value, checked, or
+    // selected attributes,  they  will  be  ignored.  If  you  want  to  set  the  initial  value  of  the
+    // input, set it in the data object instead.
+    new Vue({
+        el: '#app',
+        data: {
+            inputText: ''
+        }
+    });
+</script>
+
+</body>
+</html>
