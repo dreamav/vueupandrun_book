@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>VueUpAndRun</title>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+	<button v-bind:disabled="buttonDisabled">Test button</button>
+</div>
+
+<script>
+	// This  also  works  with  properties, such as disabled and checked:  if  the  expression
+	// passed is truthy, the output element will have the property, and if it is falsy, the ele‐
+	// ment will not
+new Vue({
+	el: '#app',
+	data: {
+		buttonDisabled: true
+	}
+});
+</script>
+
+</body>
+</html>
