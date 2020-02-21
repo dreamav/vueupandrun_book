@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VueUpAndRun</title>
+</head>
+<body>
+
+<div id="app">
+	<p v-if="hours < 12">Good morning!</p>
+	<p v-if="hours >= 12 && hours < 18">Good afternoon!</p>
+	<p v-if="hours >= 18">Good evening!</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+	new Vue({
+		el: '#app',
+		data: {
+			hours: new Date().getHours()
+		}
+	});
+</script>
+</body>
+</html>
