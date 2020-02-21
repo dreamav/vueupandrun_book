@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VueUpAndRun</title>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+	<div v-show="user">
+		<p>User name: {{ user.name }}</p>
+	</div>
+	<div v-if="user">
+		<p>User name: {{ user.name }}</p>
+	</div>
+</div>
+
+<script>
+new Vue({
+	el: '#app',
+	data: {
+		user: false
+	}
+});
+</script>
+
+</body>
+</html>
