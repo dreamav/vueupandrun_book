@@ -12,9 +12,7 @@
 <body>
 
 <div id="app">
-    <p>Product one cost: {{ productOneCost | formatCost }}</p>
-    <p>Product two cost: {{ productTwoCost | formatCost }}</p>
-    <p>Product three cost: {{ productThreeCost | formatCost }}</p>
+    <p>Product one cost: {{ productOneCost | formatCost('$') }}</p>
 </div>
 
 <script>
@@ -22,12 +20,10 @@
         el: '#app',
         data: {
             productOneCost: 998,
-            productTwoCost: 2399,
-            productThreeCost: 5300
         },
         filters: {
-            formatCost(value) {
-                return '$' + (value / 100).toFixed(2);
+            formatCost(value, symbol) {
+                return symbol + (value / 100).toFixed(2);
             }
         }
     });
