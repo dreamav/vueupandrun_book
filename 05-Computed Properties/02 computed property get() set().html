@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueUpAndRun</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <p>Sum of numbers: {{ numberTotal }}</p>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            numbers: [5, 8, 3]
+        },
+        computed: {
+            numberTotal: {
+                get() {
+                    return this.numbers.reduce((sum, val) => sum + val);
+                },
+                set(newValue) {
+                    const oldValue = this.numberTotal;
+                    const difference = newValue - oldValue;
+                    this.numbers.push(difference)
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
