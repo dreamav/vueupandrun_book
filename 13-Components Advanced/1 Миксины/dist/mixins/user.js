@@ -10,5 +10,3 @@ const userMixin = {
         }
     }
 }
-
-module.export = userMixin
