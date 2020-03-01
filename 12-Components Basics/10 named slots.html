@@ -21,7 +21,15 @@
 
 <script>
     Vue.component('blog-post', {
-        template: '<section class="blog-post"> <header> <slot name="header"></slot> <p>Post by {{ author.name }}</p> </header> <main> <slot></slot> </main> </section>',
+        template: `<section class="blog-post">
+                        <header>
+                            <slot name="header"></slot>
+                            <p>Post by {{ author.name }}</p>
+                        </header>
+                        <main>
+                            <slot></slot>
+                        </main>
+                    </section>`,
         props:{
             author:{
                 type: Object
