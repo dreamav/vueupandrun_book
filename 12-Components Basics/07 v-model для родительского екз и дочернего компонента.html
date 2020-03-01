@@ -16,31 +16,33 @@
         v-model="username"
     /> -->
     <input-username
-        :value="username"
-        @input="value => username = value"
+        :cvalue="username"
+        @input="qvalue => username = qvalue"
     ></input-username>
     <p>{{username}}</p>
 </div>
 
 <script>
     Vue.component('input-username', {
-        template: `<input type="text" :value="value" @input="handleInput">`,
+        template: `<input type="text" :value="cvalue" @input="handleInput">`,
         props:{
-            value:{
+            cvalue:{
                 type: String,
                 required: true
             }
         },
         methods:{
             handleInput(e) {
-                const value = e.target.value.toLowerCase();
+                const qvalue = e.target.value.toLowerCase();
+
+                console.log(e.target);
 
                 // If value was changed, update it on the input too
-                if(value !== e.target.value) {
-                    e.target.value = value;
+                if(qvalue !== e.target.value) {
+                    e.target.value = qvalue;
                 }
 
-                this.$emit('input', value);
+                this.$emit('input', qvalue);
             }
         }
     });
